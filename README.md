@@ -1,2 +1,20 @@
-# meeting-room-booking-api
-Meeting room booking API built with TypeScript and Express, featuring basic booking, listing, and cancellation with in‑memory storage.
+# Meeting Room Booking API
+
+Simple REST API for booking meeting rooms.
+
+## Features
+- Create a booking
+- Cancel a booking
+- List bookings for a room
+
+## Tech stack
+- Node.js
+- TypeScript
+- Express
+- In-memory storage
+
+## Running the project
+
+```bash
+npm install
+npm run dev

@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 ## Server runs at:
-```bash
+```arduino
 http://localhost:3000
 ```
 ## API Endpoints
@@ -35,7 +35,7 @@ Delete booking
 DELETE /api/bookings/:id
 ```
 List bookings for a room
-```bash
+```ruby
 GET /api/rooms/:roomId/bookings
 ```
 

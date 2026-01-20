@@ -15,3 +15,15 @@ Business rules:
 
 Keep it simple and runnable.
 
+---
+
+## Prompt 2
+
+How can I prevent overlapping bookings for the same room?
+Explain the logic and show a simple implementation.
+
+---
+
+## Prompt 3
+
+How should errors from the service layer be handled properly in an Express controller?

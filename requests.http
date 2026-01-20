@@ -1,0 +1,39 @@
+# ================================
+# Meeting Room Booking API tests
+# ================================
+
+### Create a valid booking (should succeed)
+POST http://localhost:3000/api/bookings
+Content-Type: application/json
+
+{
+  "roomId": "A1",
+  "startTime": "2026-02-01T10:00:00Z",
+  "endTime": "2026-02-01T11:00:00Z"
+}
+
+### List bookings for room A1 (should return one booking)
+GET http://localhost:3000/api/rooms/A1/bookings
+
+### Create overlapping booking (should fail with 400)
+POST http://localhost:3000/api/bookings
+Content-Type: application/json
+
+{
+  "roomId": "A1",
+  "startTime": "2026-02-01T10:30:00Z",
+  "endTime": "2026-02-01T11:30:00Z"
+}
+
+### Create booking in the past (should fail with 400)
+POST http://localhost:3000/api/bookings
+Content-Type: application/json
+
+{
+  "roomId": "A1",
+  "startTime": "2020-01-01T10:00:00Z",
+  "endTime": "2020-01-01T11:00:00Z"
+}
+
+### Delete booking by id (replace {id} with actual booking id)
+DELETE http://localhost:3000/api/bookings/{id}

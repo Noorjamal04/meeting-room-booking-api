@@ -7,15 +7,20 @@ import {
 import { Booking } from "../models/booking.model";
 
 export function createBookingHandler(req: Request, res: Response) {
-  const booking: Booking = {
-    id: Date.now().toString(),
-    roomId: req.body.roomId,
-    startTime: req.body.startTime,
-    endTime: req.body.endTime
-  };
+  try {
+    const booking: Booking = {
+      id: Date.now().toString(),
+      roomId: req.body.roomId,
+      startTime: req.body.startTime,
+      endTime: req.body.endTime
+    };
 
-  const created = createBooking(booking);
-  res.status(201).json(created);
+    const created = createBooking(booking);
+    res.status(201).json(created);
+  } catch (error) {
+    const message = (error as Error).message;
+    res.status(400).json({ error: message });
+  }
 }
 
 export function deleteBookingHandler(req: Request, res: Response) {

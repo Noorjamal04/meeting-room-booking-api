@@ -5,6 +5,9 @@ import {
   getRoomBookingsHandler
 } from "../controllers/bookings.controller";
 
+
+// Routes define the public HTTP API and map requests to controller handlers.
+// They contain no business logic.
 const router = Router();
 
 router.post("/bookings", createBookingHandler);

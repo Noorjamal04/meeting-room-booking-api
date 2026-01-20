@@ -1,6 +1,9 @@
 import { Booking } from "../models/booking.model";
 import { isInPast, isStartBeforeEnd, overlaps } from "../utils/time.utils";
 
+// Service layer contains all business logic related to bookings.
+// This logic was refined after the initial AI-generated version
+// to enforce business rules and improve correctness.
 const bookings: Booking[] = [];
 
 export function createBooking(booking: Booking): Booking {
@@ -16,7 +19,9 @@ export function createBooking(booking: Booking): Booking {
     b => b.roomId === booking.roomId
   );
 
-  const hasOverlap = roomBookings.some(existing =>
+  // Prevent overlapping bookings within the same room.
+  // Two bookings overlap if their time ranges intersect.
+    const hasOverlap = roomBookings.some(existing =>
     overlaps(
       booking.startTime,
       booking.endTime,

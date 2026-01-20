@@ -6,6 +6,8 @@ import {
 } from "../services/bookings.service";
 import { Booking } from "../models/booking.model";
 
+// Controller translates service-layer errors into HTTP responses
+// to provide clear feedback for API consumers.
 export function createBookingHandler(req: Request, res: Response) {
   try {
     const booking: Booking = {
